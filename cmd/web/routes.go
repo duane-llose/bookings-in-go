@@ -3,8 +3,8 @@ package main
 import (
 	"net/http"
 
-	"github.com/duane-llose/myapp/pkg/config"
-	"github.com/duane-llose/myapp/pkg/handlers"
+	"github.com/duane-llose/bookings-in-go/pkg/config"
+	"github.com/duane-llose/bookings-in-go/pkg/handlers"
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
 )
@@ -21,6 +21,11 @@ func routes(app *config.AppConfig) http.Handler {
 
 	mux.Get("/", handlers.Repo.Home)
 	mux.Get("/about", handlers.Repo.About)
+
+	// fmt.log)
+
+	fileServer := http.FileServer(http.Dir("./static/"))
+	mux.Handle("/static/*", http.StripPrefix("/static", fileServer))
 
 	return mux
 }

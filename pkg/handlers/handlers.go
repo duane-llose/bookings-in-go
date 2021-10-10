@@ -3,9 +3,9 @@ package handlers
 import (
 	"net/http"
 
-	"github.com/duane-llose/myapp/pkg/config"
-	"github.com/duane-llose/myapp/pkg/models"
-	"github.com/duane-llose/myapp/pkg/render"
+	"github.com/duane-llose/bookings-in-go/pkg/config"
+	"github.com/duane-llose/bookings-in-go/pkg/models"
+	"github.com/duane-llose/bookings-in-go/pkg/render"
 )
 
 // Repo the repository used by the handlers
